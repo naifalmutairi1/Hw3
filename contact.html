@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Naif Ateeq Almutairi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header role="banner" id="top">
+    <div class="topbar">
+      <a class="name" href="index.html">Naif Ateeq Almutairi</a>
+      <nav role="navigation" aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" role="main">
+    <h1>Contact</h1>
+    <p id="intro">
+      Fill out the form or just email me at
+      <a href="mailto:na0567501251@gmail.com?subject=Hi%20Naif">na0567501251@gmail.com</a>.
+    </p>
+
+    <section aria-labelledby="msg">
+      <h2 id="msg">Send a message</h2>
+      <form action="mailto:na0567501251@gmail.com" method="post" enctype="text/plain" aria-labelledby="msg">
+        <label for="name">Name
+          <input type="text" id="name" name="name" required>
+        </label>
+        <label for="email">Email
+          <input type="email" id="email" name="email" required>
+        </label>
+        <label for="message">Message
+          <textarea id="message" name="message" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <a class="top-link" href="#top">Back to top ↑</a>
+  </main>
+
+  <footer class="bottom" role="contentinfo">
+    <p>Naif Ateeq Almutairi · 2026</p>
+  </footer>
+</body>
+</html>

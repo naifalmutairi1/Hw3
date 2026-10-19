@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Naif Ateeq Almutairi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header role="banner" id="top">
+    <div class="topbar">
+      <a class="name" href="index.html">Naif Ateeq Almutairi</a>
+      <nav role="navigation" aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" role="main">
+    <h1>Projects</h1>
+    <p id="intro">Things I've been working on.</p>
+
+    <article aria-labelledby="najma">
+      <h2 id="najma">Najma</h2>
+      <p class="date"><span class="tag">AI</span><span class="tag">Drones</span> Graduation project · <time datetime="2026">2026</time> – now</p>
+      <figure>
+        <img src="images/najma.svg" alt="Drone sends accident scene data to the AI, which writes a report" width="800" height="400">
+        <figcaption>How Najma works: drone → AI → report</figcaption>
+      </figure>
+      <p>
+        Najma is our graduation project at KSU. A drone flies over a car accident and captures the
+        scene, then AI agents analyze what happened. I'm responsible for the RAG part: the system
+        looks up the relevant information and uses it to write a full accident report automatically.
+      </p>
+      <p><a href="https://github.com/majedco03/Najma" target="_blank" rel="noopener">GitHub repo</a></p>
+    </article>
+
+    <article aria-labelledby="site">
+      <h2 id="site">This website</h2>
+      <p class="date"><span class="tag">HTML</span><span class="tag">CSS</span> CSC457 homework · <time datetime="2026-09-30">September 2026</time></p>
+      <figure>
+        <img src="images/portfolio.svg" alt="Sketch of this website's layout in a browser window" width="800" height="400">
+        <figcaption>My personal site, made with HTML and CSS</figcaption>
+      </figure>
+      <p>
+        I made this site for CSC457 (Internet Technologies). It has four pages: home, CV, projects
+        and contact, all written in semantic HTML with ARIA roles so it works well with screen readers.
+        For HW3 I redid all the styling with an external CSS file.
+      </p>
+      <p>
+        <a href="https://github.com/naifalmutairi1/HW3" target="_blank" rel="noopener">GitHub repo</a> ·
+        <a href="https://hw3.naifalmutairi.me">Live site</a>
+      </p>
+    </article>
+
+    <a class="top-link" href="#top">Back to top ↑</a>
+  </main>
+
+  <footer class="bottom" role="contentinfo">
+    <p>Naif Ateeq Almutairi · 2026</p>
+  </footer>
+</body>
+</html>

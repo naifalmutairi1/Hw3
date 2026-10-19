@@ -1,0 +1,450 @@
+/* ===========================
+   styles.css - Naif's website
+   CSC457 HW3
+   =========================== */
+
+/* colors I use everywhere */
+:root {
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --text: #1f2933;
+  --soft: #52606d;
+  --main: #0f766e;
+  --main-dark: #0b4f4a;
+  --light: #e3f4f1;
+  --line: #ddd6cb;
+  --gold: #b7791f;
+}
+
+/* ---------- base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;           /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+/* body styles get inherited by everything inside it (font, color, line-height) */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: linear-gradient(180deg, var(--light) 0, var(--bg) 22rem);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* ---------- element selectors ---------- */
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--main-dark);
+  margin: 1rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--main);
+  margin: 0.25rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--light);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+ol {
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+ul li::marker {
+  color: var(--main);
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+dd {
+  margin: 0.2rem 0 0 1rem;
+  color: var(--soft);
+  font-style: italic;
+}
+
+/* rule order test: this makes all links teal...  */
+a {
+  color: var(--main);
+  text-decoration: underline;
+}
+
+/* ...but this comes after it, so hovered links turn gold */
+a:hover {
+  color: var(--gold);
+}
+
+/* ---------- header + nav ---------- */
+
+header {
+  background-color: var(--main-dark);
+  border-bottom: 0.3rem solid var(--gold);
+}
+
+.topbar {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.name {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+nav {
+  background-color: var(--main);
+  padding: 0.3rem;
+  border-radius: 2rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+/* descendant selector: only links inside nav */
+nav a {
+  display: block;
+  padding: 0.35rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 2rem;
+}
+
+nav a:hover {
+  background-color: var(--main-dark);
+  color: #ffffff;
+}
+
+/* this beats "nav a" because it's more specific */
+nav a[aria-current="page"] {
+  background-color: #ffffff;
+  color: var(--main-dark);
+}
+
+/* jump links on the CV page are a nav too, but lighter */
+.jump {
+  background-color: transparent;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.jump a {
+  color: var(--main-dark);
+  border: 1px solid var(--main);
+  text-transform: capitalize;
+}
+
+.jump a:hover {
+  background-color: var(--light);
+  color: var(--main-dark);
+}
+
+/* ---------- layout / box model ---------- */
+
+main {
+  width: 90vw;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+section,
+main > article {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 0.35rem solid var(--main);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+}
+
+/* the 3 small cards on the home page get the same height */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.cards section {
+  margin: 0;
+  min-height: 14rem;
+}
+
+section article {
+  margin-bottom: 1rem;
+}
+
+/* the CV wrapper is just a container, so no box around the boxes */
+main > article.cv {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- ID selectors ---------- */
+
+#intro {
+  font-size: 1.2rem;
+  color: var(--soft);
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+#top-quote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--light);
+  border-right: 0.35rem solid var(--main);
+  border-radius: 0.5rem;
+}
+
+#top-quote p {
+  margin: 0.25rem 0;
+  text-align: left;
+}
+
+#top-quote .arabic {
+  font-size: 1.6rem;
+  direction: rtl;
+  text-align: right;
+}
+
+#top-quote footer {
+  color: var(--soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- class selectors ---------- */
+
+.highlight {
+  background-color: #fdf2d0;
+  padding: 0 0.25rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+
+.date {
+  color: var(--soft);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: left;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--main-dark);
+  background-color: var(--light);
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+  margin-right: 0.3rem;
+}
+
+.top-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background-color: var(--main);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+}
+
+/* ---------- images ---------- */
+
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--soft);
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+/* ---------- contact form ---------- */
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--main);
+  border-color: var(--main);
+}
+
+textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+button {
+  justify-self: start;
+  padding: 0.6rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: var(--main);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--main-dark);
+}
+
+/* ---------- footer ---------- */
+
+footer.bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: var(--main-dark);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer.bottom p {
+  margin: 0;
+  text-align: center;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 40em) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  section,
+  main > article {
+    padding: 1rem;
+  }
+
+  p {
+    text-align: left;
+  }
+}

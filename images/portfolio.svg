@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Portfolio website illustration">
+  <rect width="800" height="400" fill="#dff3ef"/>
+  <rect x="150" y="50" width="500" height="300" rx="12" fill="#fff" stroke="#1c2230" stroke-width="3"/>
+  <rect x="150" y="50" width="500" height="40" rx="12" fill="#0f766e"/>
+  <rect x="150" y="75" width="500" height="15" fill="#0f766e"/>
+  <circle cx="175" cy="70" r="7" fill="#fff"/>
+  <circle cx="198" cy="70" r="7" fill="#fff"/>
+  <circle cx="221" cy="70" r="7" fill="#fff"/>
+  <rect x="180" y="110" width="80" height="14" rx="4" fill="#5b6475"/>
+  <rect x="440" y="110" width="40" height="14" rx="4" fill="#0f766e"/>
+  <rect x="490" y="110" width="40" height="14" rx="4" fill="#0f766e"/>
+  <rect x="540" y="110" width="40" height="14" rx="4" fill="#0f766e"/>
+  <rect x="590" y="110" width="40" height="14" rx="4" fill="#0f766e"/>
+  <rect x="180" y="150" width="260" height="22" rx="4" fill="#1c2230"/>
+  <rect x="180" y="190" width="440" height="10" rx="4" fill="#dde2ec"/>
+  <rect x="180" y="210" width="400" height="10" rx="4" fill="#dde2ec"/>
+  <rect x="180" y="245" width="135" height="80" rx="8" fill="#dff3ef" stroke="#dde2ec"/>
+  <rect x="332" y="245" width="135" height="80" rx="8" fill="#dff3ef" stroke="#dde2ec"/>
+  <rect x="484" y="245" width="135" height="80" rx="8" fill="#dff3ef" stroke="#dde2ec"/>
+  <text x="400" y="385" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1c2230">index · cv · projects · contact</text>
+</svg>
